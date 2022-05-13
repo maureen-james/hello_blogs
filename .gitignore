@@ -1,0 +1,7 @@
+virtualenvs/
+*pyc
+instance/
+virtual/
+__pycache__/
+.vscode/
+start.sh
