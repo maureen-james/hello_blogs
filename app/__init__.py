@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from config import configs
+# from config import configs
 
 bootstrap = Bootstrap()
 
@@ -9,7 +9,7 @@ def create_app(config_name):
     app = Flask(__name__)
 
     # Creating the app configurations
-    app.config.from_object(configs[config_name])
+    # app.config.from_object(configs[config_name])
 
     # Initializing flask extensions
     bootstrap.init_app(app)
