@@ -1,11 +1,11 @@
-# import os
+import os
 
 class Config:
     '''
     General configuration parent class
     '''
     # SQLALCHEMY_DATABASE_URI = 'postgresql://dhovgbzfvxunxq:1f91713e33aaea07cbeaa552d7744024a163014915a875621d31fdface5244fa@ec2-54-164-40-66.compute-1.amazonaws.com:5432/d7mvbcpmgju4cj'
-    # SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     # UPLOADED_PHOTOS_DEST ='app/static/photos'
     # #  email configurations
     # MAIL_SERVER = 'smtp.googlemail.com'
