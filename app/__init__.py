@@ -17,10 +17,10 @@ def create_app(config_name):
     # Will add the views and forms
 
     # Registering the blueprint
-    from .main import main as main_blueprint
+    from app import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     #   setting config
-    from requests import configure_request
-    configure_request(app)
+    # from requests import configure_request
+    # configure_request(app)
     return app
