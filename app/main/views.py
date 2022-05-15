@@ -1,4 +1,4 @@
-from app import main
+from . import main
 from flask import render_template,request,redirect,url_for,abort
 from ..models import Blog
 
