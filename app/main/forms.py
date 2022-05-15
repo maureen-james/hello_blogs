@@ -27,7 +27,7 @@
 #         if User.query.filter_by(username = data_field.data).first():
 #             raise ValidationError('That username is taken')
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField,RadioField, FileField,TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField,TextAreaField
 from wtforms.fields.simple import TextAreaField
 from wtforms.validators import DataRequired, Length, EqualTo
 from ..models import User
@@ -45,12 +45,12 @@ class UpdateProfile(FlaskForm):
     submit = SubmitField('Submit')
 
 
-class PitchForm(FlaskForm):
-    title = StringField('Pitch Title', validators=[DataRequired(), Length(1, 64)])
-    category = StringField('Pitch Category', validators=[DataRequired(), Length(1, 64)])
-    post = TextAreaField('Pitch Content', validators=[DataRequired()])
+class BlogForm(FlaskForm):
+    title = StringField('Blog Title', validators=[DataRequired(), Length(1, 64)])
+    category = StringField('Blog Category', validators=[DataRequired(), Length(1, 64)])
+    post = TextAreaField('Blog Content', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 class CommentForm(FlaskForm):
-    content = TextAreaField('Pitch Content', validators=[DataRequired()])
+    content = TextAreaField('Blog Content', validators=[DataRequired()])
     submit = SubmitField('Submit')

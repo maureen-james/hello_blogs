@@ -1,18 +1,18 @@
-from . import main
-from flask import render_template,request,redirect,url_for,abort
-from ..models import Blog
+# from . import main
+# from flask import render_template,request,redirect,url_for,abort
+# from ..models import Blog
 
 
 
 
+# # @main.route('/')
+# # def index():
+# #     return render_template('index.html')
 # @main.route('/')
 # def index():
-#     return render_template('index.html')
-@main.route('/')
-def index():
-    blog=Blog.query.all()
+#     blog=Blog.query.all()
 
-    return render_template('index.html', blog=blog)
+#     return render_template('index.html', blog=blog)
     
 from flask import render_template,request,redirect,url_for,abort,flash
 from . import main
@@ -40,7 +40,7 @@ def add_blog():
         
         return redirect(url_for('main.index'))
     
-    return render_template('blog.html', form=form)
+    return render_template('blogs.html', form=form)
 
 @main.route('/addcomment',methods=['GET','POST'])
 def add_comment():
@@ -52,4 +52,4 @@ def add_comment():
         
         return redirect(url_for('main.index'))
     
-    return render_template('addcomment.html', form=form)    
+    return render_template('comment.html', form=form)    
