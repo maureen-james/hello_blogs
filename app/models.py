@@ -13,9 +13,9 @@ class User(UserMixin, db.Model):
     bio = db.Column(db.String(255))
     blog=db.relationship('Blog',backref='user',lazy='dynamic')
     comment = db.relationship('Comment', backref='user', lazy='dynamic')
-    like = db.relationship('Likes', backref='user', lazy='dynamic')
-    dislikes = db.relationship('Dislikes', backref='user', lazy='dynamic')
-    profile_pic_path = db.Column(db.String())
+    # like = db.relationship('Likes', backref='user', lazy='dynamic')
+    # dislikes = db.relationship('Dislikes', backref='user', lazy='dynamic')
+
 
     @property
     def set_password(self):
@@ -47,8 +47,8 @@ class Blog(db.Model):
     comment = db.relationship('Comment', backref='blog', lazy='dynamic')
     category = db.Column(db.String(255), index = True,nullable = False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
-    like = db.relationship('Likes', backref='blog', lazy='dynamic')
-    dislikes = db.relationship('Dislikes', backref='blog', lazy='dynamic')
+    # like = db.relationship('Likes', backref='blog', lazy='dynamic')
+    # dislikes = db.relationship('Dislikes', backref='blog', lazy='dynamic')
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def save(self):
