@@ -2,13 +2,6 @@
 
 {% import 'macros.html' as macro %}
 
-{% block styles%}
-    {{super()}}
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock%}
-
-{% block content%}{% extends 'base.html'%}
-
 {% block head %}
 <!-- css link -->
 {% block styles %}
@@ -30,6 +23,18 @@
 
 <div class="container"  >
         <div class="row">
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header text-center" style="color: #ff1493;">
+                <b>Quote of the Day</b>
+              </div>
+              <div class="card-body">
+                  <p>{{ quote.quote }}</p>
+                  <cite>{{ quote.author }}</cite>
+              </div>
+            </div> 
+          </div>
+        </div>
           {% for pitch in pitches %}
           <div class="col-md-4 ">
               <div class="pitch">

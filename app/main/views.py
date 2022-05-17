@@ -19,7 +19,7 @@ from . import main
 from .forms import *
 from ..models import Blog,Comment
 from .. import db
-from ..requests import get_quote
+from ..request import get_quote
 
 # from flask_login import login_required,current_user
 
