@@ -16,12 +16,7 @@
 <title>{{ title }}</title>
 {% endblock %}
 {% block content %}
-<!-- <div class="jumbotron jumbotron-fluid bg-secondary">
-  <div class="container">
-    <h1 class="display-4">Pitch Perfect</h1>
-    <p class="lead">In life, you only have 60 seconds to impress someone. 1 minute can make or break you. </p>
-  </div>
-</div> -->
+
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -36,12 +31,13 @@
   </div>
 </div>
 
+<div class="body1">
 <div class="container"  >
         <div class="row">
           <div class="quote">
-          <div class="col-lg-8">
+          <div class="col-lg-8 mb-3 mx-auto">
             <div class="card">
-              <div class="card-header text-center" style="color: #f0409e8e;">
+              <div class="card-header text-center" style="color: deeppink;">
                 <b>Quote of the Day</b>
               </div>
               <div class="card-body">
@@ -52,8 +48,12 @@
           </div>
           </div>
         </div>
+        <div class="head text-center text-light ">
+        <h1><strong>UDAKU ZONE</strong></h1>
+      </div>
           {% for blog in blog %}
-          <div class="col-md-4 ">
+         
+          <div class="col-md-12 mb-3">
               <div class="blog">
             <div class="panel panel-default text-center " id="display1">
                 <div class="panel-heading">
@@ -64,10 +64,11 @@
                     <p>{{ blog.post }}</p>
             
                     <p class="panel-text"><strong>Created on: <span class="badge rounded-pill text-dark">{{
-                      pitch.date_created  }}</span></strong> <br>
+                      blog.date_created  }}</span></strong> <br>
                       <a href="{{url_for('main.like',id = blog.id)}}"> <i class="fa fa-thumbs-up"></i> upvotes: {{blog.like.count()}}</a>
                       <a href="{{url_for('main.dislike',id = blog.id)}}"> <i class="fa fa-thumbs-down"></i> downvotes: {{blog.dislikes.count()}}</a>
-                      <a href="{{ url_for('main.comment', blog_id = blog.id)}}"><i class="fa fa-comments" aria-hidden="true"></i>comment</a>
+                      <a href="{{ url_for('main.comment',id = blog.id)}}"><i class="fa fa-comments" aria-hidden="true"></i>comment</a>
+                      <a href="{{url_for('main.delete',id = blog.id)}}"><i class="fa fa-trash" style="color: red;"></i>Delete</a>
                     </p>
                       
                 </div>
@@ -76,8 +77,9 @@
         </div> 
           {% endfor %}
                         
-        </div>   
-              </div>
+        </div>  
+      </div> 
+              
    <div class="container ">
     <div class="row ">
         <div class="col-md-12">

@@ -50,9 +50,10 @@ class Blog(db.Model):
     title = db.Column(db.String(255), nullable = False)
     post = db.Column(db.Text(), nullable = False)
     comment = db.relationship('Comment', backref='blog', lazy='dynamic')
+    delete = db.relationship('Delete',backref = 'post',lazy='dynamic')
     category = db.Column(db.String(255), index = True,nullable = False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
-    likes = db.relationship('Likes', backref='blog', lazy='dynamic')
+    like = db.relationship('Likes', backref='blog', lazy='dynamic')
     dislikes = db.relationship('Dislikes', backref='blog', lazy='dynamic')
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
@@ -68,14 +69,34 @@ class Blog(db.Model):
         return f"Blog {self.title}"
 
 
+class Delete(db.Model):
+
+    __tablename__ = 'delete'
+    id = db.Column(db.Integer,primary_key = True)
+    blog_id = db.Column(db.Integer,db.ForeignKey('blogs.id'))
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_deletes(cls,id):
+        delete = Delete.query.filter_by(blog_id=id).all()
+        return delete
+
+    def _repr_(self):
+        return f'{self.blog_id}'
+
+
+
 class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    pitch_id = db.Column(db.Integer, db.ForeignKey('blog.id'), nullable=False)
+    blog_id = db.Column(db.Integer, db.ForeignKey('blog.id'), nullable=False)
     comment = db.Column(db.Text(),nullable = False) 
     
-    def save_c(self):
+    def save(self):
         db.session.add(self)
         db.session.commit()
 

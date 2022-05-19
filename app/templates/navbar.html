@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: deeppink;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"> SUPER HOT </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
             <a class="nav-link" href="{{url_for('main.profile',name=current_user.username)}}">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/new_pitches" class="tag"> Create Your Blog</a>
+            <a class="nav-link" href="/new_blog" class="tag"> Create Your Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('auth.logout')}}">Sign Out</a></li>

@@ -11,27 +11,33 @@
     margin-right: 30px;
     margin-left: 30px;
 }
-.blog{
-    background-color: #ACC8E5;
-    color:#112117;
-    border: 2px solid rgb(151, 145, 229);
-    border-radius: 10px;
-    box-shadow:15px 20px rgb(80, 70, 80);
+.body1{
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+    background-position: center;
+    /* From https://css.glass */
+   /* background: rgba(255, 255, 255, 0.2);
+   border-radius: 16px;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   border: 1px solid rgba(255, 255, 255, 0.3); */
 }
-.col-md-4{
+.blog{
+    backdrop-filter: blur(5px) saturate(200%);
+    -webkit-backdrop-filter: blur(5px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(209, 213, 219, 0.3);
     height: 50vh;
 }
+
+/* .col-md-4{
+    height: 50vh;
+} */
 .fa{
 padding-left: 12px;
 }
 .nav{
     display: flex;
-}
-.quote{
-    backdrop-filter: blur(5px) saturate(200%);
-    -webkit-backdrop-filter: blur(5px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.45);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
-
 }

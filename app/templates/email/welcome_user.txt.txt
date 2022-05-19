@@ -1,4 +1,4 @@
 Hello {{user.username}}
-Welcome to Pitch perfect
+Welcome to Super Hot Blogs
 We acknowledge you have signed up for our application.
 Welcome again.

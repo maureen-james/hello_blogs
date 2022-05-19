@@ -2,12 +2,16 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
-<!-- <div class="col-md-4"> </div> -->
-<div class="col-md-6 bg-info mx-auto">
+<div class="row">
+<div class="col-md-6 bg-info">
+   <img src="../static/photos/blog3.jpeg" style="height: 500px; width: 100%" alt="blog"> 
+</div> 
+<div class="col-md-6 bg-info">
 
   {{wtf.quick_form(registration_form)}}
 
  </div>
+</div>
 
 
 
