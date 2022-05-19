@@ -19,6 +19,7 @@ flask-simplemde = "*"
 flask-mail = "*"
 email-validator = "*"
 werkzeug = "==1.0.1"
+markupsafe = "==2.0.1"
 
 [dev-packages]
 
